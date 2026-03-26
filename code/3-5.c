@@ -5,13 +5,17 @@ void my_sum(char type, int count, ...){
     va_start(ap, count);
 
     if(type == 'S'){
-        for(int i; i < count; i++){
-            printf("%s ", va_arg(ap, char*));
+        for(int i = 0; i < count; i++){
+            printf("%s", va_arg(ap, char*));
+
+            if(i < count -1){
+                printf(" ");
+            }
         }
         printf("\n");
     }
     else if(type == 'C'){
-        for(int i; i < count; i++){
+        for(int i = 0; i < count; i++){
             printf("%c", va_arg(ap, int));
         }
         printf("\n");
